@@ -39,7 +39,7 @@ const CryptoPrices = () => {
 
   return (
     <div className="p-4">
-      <div className="text-lg p-2 mx-auto flex justify-around bg-primary1 text-text rounded-lg md:w-3/4 w-full">
+      <div className="text-lg p-2 mx-auto flex justify-between bg-primary1  text-text rounded-lg md:w-5/6 w-full">
         <span>Coin</span>
         <span>Price</span>
         <span>Volume</span>
@@ -48,11 +48,11 @@ const CryptoPrices = () => {
       </div>
       <div className="mt-4 text-text">
         {coins.length > 0 ? (
-          <div className="flex flex-col gap-4 md:w-3/4 w-full mx-auto">
+          <div className="flex flex-col gap-4 md:w-5/6 w-full mx-auto">
             {coins.map((coin) => (
               <div
                 key={coin.id}
-                className="flex items-center border-b border-gray-300 pb-4"
+                className="flex items-center border-b border-text pb-4 justify-between"
               >
                 <div className=" flex px-2">
                   <img
@@ -65,11 +65,21 @@ const CryptoPrices = () => {
                   </span>
                 </div>
                 <div className="">
-                  <span>$ {coin.current_price}</span>
+                  <span>$ {coin.current_price.toLocaleString()}</span>
                 </div>
-                <div className="">{coin.total_volume}</div>
-                <div className="">{coin.market_cap}</div>
-                <div className="">{coin.market_cap_change_percentage_24h}</div>
+                <div className="">${coin.total_volume.toLocaleString()}</div>
+                <div className="">${coin.market_cap.toLocaleString()}</div>
+                <div className="">
+                  <p
+                    className={`text-sm ${
+                      coin.price_change_percentage_24h >= 0
+                        ? "text-green-400"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {coin.price_change_percentage_24h.toFixed(2)}%
+                  </p>
+                </div>
               </div>
             ))}
           </div>
