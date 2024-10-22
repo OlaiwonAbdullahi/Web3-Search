@@ -3,7 +3,7 @@ import SearchHeader from "../components/SearchHeader";
 
 const Tracker = () => {
   return (
-    <div className=" bg-primary h-screen flex flex-col gap-5 p-4">
+    <div className=" bg-primary h-full flex flex-col gap-5 p-4">
       <div className="">
         <SearchHeader>
           <span className=" text-secondary">C</span>rypto{" "}
