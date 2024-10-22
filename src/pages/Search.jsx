@@ -1,5 +1,4 @@
 import SearchHeader from "../components/SearchHeader";
-import cryptoImage from "../assets/crypto.svg"; // Make sure the image path is correct
 import SearchInput from "../components/SearchInput";
 
 const Search = () => {
