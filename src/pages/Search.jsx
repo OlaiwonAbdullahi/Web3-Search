@@ -19,13 +19,14 @@ const Search = () => {
     try {
       const res = await fetch(url);
       const data = await res.json();
+      setResult(data.items || []);
       console.log(data.items || []);
     } catch (error) {
       console.error(error);
     }
   };
   return (
-    <div className="bg-primary h-screen opacity-95 flex flex-col gap-4 p-4">
+    <div className="bg-primary h-full opacity-95 flex flex-col gap-4 p-4">
       <div className="">
         <SearchHeader>
           <span className=" text-secondary">W</span>eb3{" "}

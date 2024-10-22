@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         Agdasima: ["Agdasima", "serif"],
+        Montserrat: ["Montserrat", "serif"],
       },
       colors: {
         primary: "#0F1A1A",
