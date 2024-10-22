@@ -1,7 +1,29 @@
+import { useState } from "react";
 import SearchHeader from "../components/SearchHeader";
 import SearchInput from "../components/SearchInput";
+import SearchResult from "../components/SearchResult";
 
 const Search = () => {
+  const [query, setQuery] = useState("");
+  const [result, setResult] = useState([]);
+  const apiKey = "AIzaSyDVczYNXbEtstDemtgc9eJF3EyZOn9Tm-E";
+  const searchEngineId = "705f7f8fd90224c9d";
+
+  const handleSearch = async () => {
+    if (!query) return;
+
+    const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${encodeURIComponent(
+      query
+    )}`;
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      console.log(data.items || []);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className="bg-primary h-screen opacity-95 flex flex-col gap-4 p-4">
       <div className="">
@@ -11,7 +33,14 @@ const Search = () => {
         </SearchHeader>
       </div>
       <div className="">
-        <SearchInput />
+        <SearchInput
+          setQuery={setQuery}
+          query={query}
+          handleSearch={handleSearch}
+        />
+      </div>
+      <div className="">
+        <SearchResult result={result} />
       </div>
     </div>
   );
