@@ -2,14 +2,15 @@ import { useState } from "react";
 import { CiFolderOn, CiGlobe, CiSettings, CiUser } from "react-icons/ci";
 import { IoTrendingUp } from "react-icons/io5";
 import { SlSocialGithub } from "react-icons/sl";
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 const Sidebar = () => {
   const [active, setActive] = useState("CiGlobe");
 
   const menuItems = [
-    { icon: CiGlobe, name: "CiGlobe" },
-    { icon: IoTrendingUp, name: "IoTrendingUp" },
-    { icon: CiFolderOn, name: "CiFolderOn" },
+    { icon: CiGlobe, name: "CiGlobe", to: "/" },
+    { icon: IoTrendingUp, name: "IoTrendingUp", to: "/price" },
+    { icon: CiFolderOn, name: "CiFolderOn", to: "/resources" },
   ];
 
   const bottomItems = [
@@ -22,15 +23,16 @@ const Sidebar = () => {
     <div className="bg-primary1 w-14 h-screen flex flex-col justify-between">
       <div className="text-text p-2 flex flex-col items-center justify-around h-1/3">
         {menuItems.map((item) => (
-          <div
-            key={item.name}
-            className={`p-1 rounded-lg cursor-pointer ${
-              active === item.name ? "bg-primaryHover text-secondary" : ""
-            }`}
-            onClick={() => setActive(item.name)}
-          >
-            <item.icon className="h-8 w-8" />
-          </div>
+          <Link key={item.name} to={item.to}>
+            <div
+              className={`p-1 rounded-lg cursor-pointer ${
+                active === item.name ? "bg-primaryHover text-secondary" : ""
+              }`}
+              onClick={() => setActive(item.name)}
+            >
+              <item.icon className="h-8 w-8" />
+            </div>
+          </Link>
         ))}
       </div>
 
