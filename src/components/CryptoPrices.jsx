@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { IoIosSearch } from "react-icons/io";
 
 const CryptoPrices = () => {
   const [coins, setCoins] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [filteredCoins, setFilteredCoins] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const fetchCoins = async () => {
     setLoading(true);
@@ -17,11 +20,12 @@ const CryptoPrices = () => {
         throw new Error("Failed to fetch data");
       }
       const data = await res.json();
-      setCoins(data); // Set the fetched coins data
+      setCoins(data);
+      setFilteredCoins(data);
     } catch (error) {
-      setError(error.message); // Fixed typo
+      setError(error.message); // Corrected to use error.message
     } finally {
-      setLoading(false); // Ensure loading is set to false
+      setLoading(false);
     }
   };
 
@@ -29,17 +33,41 @@ const CryptoPrices = () => {
     fetchCoins();
   }, []);
 
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+    const filtered = coins.filter(
+      (coin) =>
+        coin.name.toLowerCase().includes(query) ||
+        coin.symbol.toLowerCase().includes(query)
+    );
+    setFilteredCoins(filtered);
+  };
+
+  // Check loading and error state here
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="p-4">Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="p-4">Error: {error}</div>;
   }
 
   return (
-    <div className="p-4">
-      <div className="text-lg p-2 mx-auto flex justify-between bg-primary1  text-text rounded-lg md:w-5/6 w-full">
+    <div className="p-4 flex flex-col gap-4">
+      <div className="">
+        <div className="flex rounded-full mx-auto border border-black w-1/3 bg-text justify-between p-1 items-center">
+          <input
+            type="text"
+            placeholder="Search A Coin"
+            value={searchQuery}
+            onChange={handleSearch}
+            className="bg-text w-full text-primary placeholder:text-primary focus:outline-none p-1 pl-2 rounded-full"
+          />
+          <IoIosSearch className="text-black h-6 w-6" />
+        </div>
+      </div>
+      <div className="text-lg p-2 mx-auto flex justify-between bg-primary1 text-text rounded-lg md:w-5/6 w-full">
         <span>Coin</span>
         <span>Price</span>
         <span>Volume</span>
@@ -47,14 +75,14 @@ const CryptoPrices = () => {
         <span>24h Change</span>
       </div>
       <div className="mt-4 text-text">
-        {coins.length > 0 ? (
+        {filteredCoins.length > 0 ? (
           <div className="flex flex-col gap-4 md:w-5/6 w-full mx-auto">
-            {coins.map((coin) => (
+            {filteredCoins.map((coin) => (
               <div
                 key={coin.id}
                 className="flex items-center border-b border-text pb-4 justify-between"
               >
-                <div className=" flex px-2">
+                <div className="flex px-2">
                   <img
                     src={coin.image}
                     alt={coin.name}

@@ -5,7 +5,7 @@ import Tracker from "./pages/Tracker";
 
 function App() {
   return (
-    <div className="font-Agdasima flex">
+    <div className="font-Agdasima flex bg-primary">
       <Router>
         <div className="w-14">
           <Sidebar />
