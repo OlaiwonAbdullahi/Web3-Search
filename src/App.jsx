@@ -1,5 +1,11 @@
+import Sidebar from "./components/Sidebar";
+
 function App() {
-  return <div className=" font-Agdasima text-4xl">Web 3 Search</div>;
+  return (
+    <div className=" font-Agdasima">
+      <Sidebar />
+    </div>
+  );
 }
 
 export default App;
