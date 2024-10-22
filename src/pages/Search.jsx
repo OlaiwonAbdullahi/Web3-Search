@@ -1,5 +1,11 @@
+import SearchHeader from "../components/SearchHeader";
+
 const Search = () => {
-  return <div>Search</div>;
+  return (
+    <div className="bg-primary h-screen opacity-95">
+      <SearchHeader />
+    </div>
+  );
 };
 
 export default Search;
