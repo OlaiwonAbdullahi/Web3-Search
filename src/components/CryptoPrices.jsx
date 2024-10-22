@@ -23,7 +23,7 @@ const CryptoPrices = () => {
       setCoins(data);
       setFilteredCoins(data);
     } catch (error) {
-      setError(error.message); // Corrected to use error.message
+      setError(error.message);
     } finally {
       setLoading(false);
     }
