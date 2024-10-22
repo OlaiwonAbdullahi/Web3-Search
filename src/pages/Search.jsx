@@ -40,7 +40,7 @@ const Search = () => {
           handleSearch={handleSearch}
         />
       </div>
-      <div className="">
+      <div className="bg-primary min-h-screen">
         <SearchResult result={result} />
       </div>
     </div>

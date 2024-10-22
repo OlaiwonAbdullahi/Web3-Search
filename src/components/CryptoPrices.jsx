@@ -112,7 +112,7 @@ const CryptoPrices = () => {
             ))}
           </div>
         ) : (
-          <p>No coins available.</p>
+          <p className=" text-center">No coins available.</p>
         )}
       </div>
     </div>

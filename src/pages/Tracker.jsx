@@ -11,7 +11,7 @@ const Tracker = () => {
           <span className=" text-secondary">T</span>racker
         </SearchHeader>
       </div>
-      <div className=" ">
+      <div className="bg-primary min-h-screen ">
         <CryptoPrices />
       </div>
     </div>

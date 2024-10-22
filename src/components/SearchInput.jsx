@@ -5,9 +5,10 @@ const SearchInput = ({ query, setQuery, handleSearch }) => {
     <div className=" flex rounded-full mx-auto border border-black w-1/3 bg-text justify-between p-1 items-center">
       <input
         type="text"
+        placeholder=" Search the Web"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className=" bg-text w-full focus:outline-none p-1 pl-2 rounded-full"
+        className=" bg-text w-full focus:outline-none p-1 pl-2 rounded-full text-xl font-Montserrat placeholder:text-primary text-primary"
       />
       <button className="" onClick={handleSearch}>
         <IoIosSearch className="text-black h-6 w-6" />
