@@ -47,13 +47,13 @@ const SearchResult = ({ result }) => {
                   <p className="text-text text-sm">{item.snippet}</p>
                 </div>
               </div>
-              <div className=" flex items-center justify-center basis-1/3">
+              {/* <div className=" flex items-center justify-center basis-1/3">
                 <img
                   src={item.pagemap.cse_image[0].src}
                   alt=""
                   className=" h-20 w-20 rounded-md"
                 />
-              </div>
+              </div>*/}
             </div>
           ))
         ) : (

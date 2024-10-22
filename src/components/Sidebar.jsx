@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { CiFolderOn, CiGlobe, CiSettings, CiUser } from "react-icons/ci";
+import { CiGlobe, CiSettings, CiUser } from "react-icons/ci";
 import { IoTrendingUp } from "react-icons/io5";
+import { BsStars } from "react-icons/bs";
 import { SlSocialGithub } from "react-icons/sl";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [active, setActive] = useState("CiGlobe");
@@ -10,7 +11,7 @@ const Sidebar = () => {
   const menuItems = [
     { icon: CiGlobe, name: "CiGlobe", to: "/" },
     { icon: IoTrendingUp, name: "IoTrendingUp", to: "/price" },
-    { icon: CiFolderOn, name: "CiFolderOn", to: "/resources" },
+    { icon: BsStars, name: "BsStars", to: "/ai" },
   ];
 
   const bottomItems = [

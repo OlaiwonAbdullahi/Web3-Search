@@ -32,11 +32,11 @@ function App() {
             <Route
               path="*"
               element={
-                <div>
+                <div className="bg-primary min-h-screen text-text items-center  justify-center my-auto">
                   <h1 className="text-3xl text-center">
                     Oops! 🚧 Under Construction
                   </h1>
-                  <p className=" text-center">
+                  <p className=" text-center font-Montserrat">
                     It looks like you&apos;ve wandered into uncharted territory!
                     Our developer is still working on this part of the website.
                     🚀 <br />

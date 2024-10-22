@@ -80,7 +80,7 @@ const CryptoPrices = () => {
             {filteredCoins.map((coin) => (
               <div
                 key={coin.id}
-                className="flex items-center border-b border-text pb-4 justify-between"
+                className="flex items-center border-b border-dotted border-text pb-4 justify-between"
               >
                 <div className="flex px-2">
                   <img
