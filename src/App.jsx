@@ -10,7 +10,7 @@ function App() {
         <div className="w-14">
           <Sidebar />
         </div>
-        <div className="flex-grow">
+        <div className="flex-grow bg-primary">
           <Routes>
             <Route
               path="/"
