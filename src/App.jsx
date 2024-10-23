@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import Search from "./pages/Search";
 import Tracker from "./pages/Tracker";
 import ChatBot from "./pages/ChatBot";
+import MobileNavBar from "./components/MobileNavBar";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       <Router>
         <div className="w-14">
           <Sidebar />
+        </div>
+        <div className="">
+          <MobileNavBar />
         </div>
         <div className="flex-grow bg-primary">
           <Routes>

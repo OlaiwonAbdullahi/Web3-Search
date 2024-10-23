@@ -22,12 +22,15 @@ const PriceMarquee = () => {
   }, []);
 
   return (
-    <div className=" w-full flex justify-center">
-      <div className="text-secondary w-[900px]">
-        <Marquee>
+    <div className="w-full flex justify-center py-2 ">
+      <div className="text-secondary w-full max-w-[900px] px-4">
+        <Marquee pauseOnHover={true}>
           {prices.length > 0 &&
             prices.map((item) => (
-              <div key={item.id} className="mx-4">
+              <div
+                key={item.id}
+                className="mx-4 text-xs md:text-sm lg:text-base font-semibold text-secondary"
+              >
                 {item.symbol.toUpperCase()} :{" "}
                 {item.current_price.toLocaleString("en-US", {
                   style: "currency",
