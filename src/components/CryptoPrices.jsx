@@ -67,7 +67,7 @@ const CryptoPrices = () => {
           <IoIosSearch className="text-black h-6 w-6" />
         </div>
       </div>
-      <div className="text-lg p-2 mx-auto flex justify-between bg-primary1 text-text rounded-lg md:w-5/6 w-full">
+      <div className="text-lg p-2 mx-auto flex top-0 sticky justify-between bg-primary1 text-text rounded-lg md:w-5/6 w-full">
         <span>Coin</span>
         <span>Price</span>
         <span>Volume</span>
