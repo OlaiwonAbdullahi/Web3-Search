@@ -1,9 +1,13 @@
 import CryptoPrices from "../components/CryptoPrices";
+import PriceMarquee from "../components/PriceMarquee";
 import SearchHeader from "../components/SearchHeader";
 
 const Tracker = () => {
   return (
     <div className=" bg-primary h-full flex flex-col gap-5 p-4">
+      <div className="">
+        <PriceMarquee />
+      </div>
       <div className="">
         <SearchHeader>
           <span className=" text-secondary">C</span>rypto{" "}
