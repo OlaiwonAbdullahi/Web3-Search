@@ -21,7 +21,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="bg-primary1 z-20 w-14 h-screen flex flex-col justify-between fixed ">
+    <div className="bg-primary1 z-20 hidden  w-14 h-screen md:flex flex-col justify-between fixed ">
       <div className="text-text p-2 flex flex-col items-center justify-around h-1/3">
         {menuItems.map((item) => (
           <Link key={item.name} to={item.to}>
