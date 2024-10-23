@@ -10,7 +10,7 @@ const PriceMarquee = () => {
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
       );
       const data = await res.json();
-      console.log(data);
+      //console.log(data);
       setPrices(data); // Set state to the fetched price data (data is already in the correct format)
     } catch (error) {
       console.log(error);

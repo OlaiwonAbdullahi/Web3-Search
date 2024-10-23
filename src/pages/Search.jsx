@@ -26,26 +26,36 @@ const Search = () => {
       console.error(error);
     }
   };
+
   return (
-    <div className="bg-primary h-full opacity-95 flex flex-col gap-4 p-4">
-      <div className=" w-full">
-        <PriceMarquee className=" w-2/3" />
+    <div className="bg-primary min-h-screen opacity-95 flex flex-col gap-6 p-4">
+      {/* PriceMarquee */}
+      <div className="w-full mb-4">
+        <PriceMarquee />
       </div>
-      <div className="">
+
+      {/* Search Header */}
+      <div className="text-center">
         <SearchHeader>
-          <span className=" text-secondary">W</span>eb3{" "}
-          <span className=" text-secondary">S</span>earch
+          <span className="text-secondary text-4xl md:text-5xl">W</span>eb3{" "}
+          <span className="text-secondary text-4xl md:text-5xl">S</span>earch
         </SearchHeader>
       </div>
-      <div className="">
+
+      {/* Search Input */}
+      <div className="w-full flex justify-center">
         <SearchInput
           setQuery={setQuery}
           query={query}
           handleSearch={handleSearch}
         />
       </div>
-      <div className="bg-primary min-h-screen">
-        <SearchResult result={result} />
+
+      {/* Search Result */}
+      <div className="w-full flex justify-center mt-6">
+        <div className="w-full max-w-screen-lg">
+          <SearchResult result={result} />
+        </div>
       </div>
     </div>
   );
