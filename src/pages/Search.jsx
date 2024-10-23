@@ -2,6 +2,7 @@ import { useState } from "react";
 import SearchHeader from "../components/SearchHeader";
 import SearchInput from "../components/SearchInput";
 import SearchResult from "../components/SearchResult";
+import PriceMarquee from "../components/PriceMarquee";
 
 const Search = () => {
   const [query, setQuery] = useState("");
@@ -27,6 +28,9 @@ const Search = () => {
   };
   return (
     <div className="bg-primary h-full opacity-95 flex flex-col gap-4 p-4">
+      <div className=" w-full">
+        <PriceMarquee className=" w-2/3" />
+      </div>
       <div className="">
         <SearchHeader>
           <span className=" text-secondary">W</span>eb3{" "}

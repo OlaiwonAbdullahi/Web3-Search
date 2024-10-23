@@ -7,7 +7,7 @@ const MessagingInput = () => {
         <input
           type="text"
           placeholder="Ask Anything"
-          className="w-full p-1 bg-transparent text-lg"
+          className="w-full p-1 bg-transparent text-lg focus:outline-none text-text"
         />
         <button className="flex items-center">
           <AiOutlineSend className="size-8 text-secondary" />
