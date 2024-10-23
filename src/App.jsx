@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Search from "./pages/Search";
 import Tracker from "./pages/Tracker";
+import ChatBot from "./pages/ChatBot";
 
 function App() {
   return (
@@ -25,6 +26,14 @@ function App() {
               element={
                 <div>
                   <Tracker />
+                </div>
+              }
+            />
+            <Route
+              path="/ai"
+              element={
+                <div>
+                  <ChatBot />
                 </div>
               }
             />
