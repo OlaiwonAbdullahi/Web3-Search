@@ -5,11 +5,19 @@ import SearchHeader from "../components/SearchHeader";
 const Tracker = () => {
   return (
     <div className=" bg-primary h-full flex flex-col gap-5 p-4">
-      <div className="">
+      <div className="text-center">
         <SearchHeader>
-          <span className=" text-secondary">C</span>rypto{" "}
-          <span className=" text-secondary">P</span>rice{" "}
-          <span className=" text-secondary">T</span>racker
+          <div className=" flex gap-2 mx-auto text-center justify-center">
+            <p className="text-3xl">
+              <span className="text-secondary text-4xl">C</span>rypto{" "}
+            </p>
+            <p className="text-3xl">
+              <span className="text-secondary text-4xl">P</span>rice
+            </p>
+            <p className="text-3xl">
+              <span className="text-secondary text-4xl">T</span>racker
+            </p>
+          </div>
         </SearchHeader>
       </div>
       <div className="bg-primary min-h-screen ">

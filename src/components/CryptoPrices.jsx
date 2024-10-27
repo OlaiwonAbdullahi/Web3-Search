@@ -44,7 +44,6 @@ const CryptoPrices = () => {
     setFilteredCoins(filtered);
   };
 
-  // Check loading and error state here
   if (loading) {
     return <div className="p-4">Loading...</div>;
   }
@@ -56,7 +55,7 @@ const CryptoPrices = () => {
   return (
     <div className="p-4 flex flex-col gap-4">
       <div className="">
-        <div className="flex rounded-full mx-auto border border-black w-1/3 bg-text justify-between p-1 items-center">
+        <div className="flex rounded-full mx-auto border border-black md:w-1/3 w-full bg-text justify-between p-1 items-center">
           <input
             type="text"
             placeholder="Search A Coin"
@@ -74,13 +73,15 @@ const CryptoPrices = () => {
         <span>Market Cap</span>
         <span>24h Change</span>
       </div>
-      <div className="mt-4 text-text">
+
+      {/* Scrollable Table Wrapper */}
+      <div className="mt-4 text-text w-full overflow-x-auto">
         {filteredCoins.length > 0 ? (
           <div className="flex flex-col gap-4 md:w-5/6 w-full mx-auto">
             {filteredCoins.map((coin) => (
               <div
                 key={coin.id}
-                className="flex items-center border-b border-dotted border-text pb-4 justify-between"
+                className="flex items-center border-b border-dotted border-text pb-4 justify-between min-w-[600px]"
               >
                 <div className="flex px-2">
                   <img
@@ -89,15 +90,15 @@ const CryptoPrices = () => {
                     className="w-8 h-8 mr-4"
                   />
                   <span>
-                    {coin.name} {"  "}({coin.symbol.toUpperCase()})
+                    {coin.name} ({coin.symbol.toUpperCase()})
                   </span>
                 </div>
-                <div className="">
+                <div>
                   <span>$ {coin.current_price.toLocaleString()}</span>
                 </div>
-                <div className="">${coin.total_volume.toLocaleString()}</div>
-                <div className="">${coin.market_cap.toLocaleString()}</div>
-                <div className="">
+                <div>${coin.total_volume.toLocaleString()}</div>
+                <div>${coin.market_cap.toLocaleString()}</div>
+                <div>
                   <p
                     className={`text-sm ${
                       coin.price_change_percentage_24h >= 0
@@ -112,7 +113,7 @@ const CryptoPrices = () => {
             ))}
           </div>
         ) : (
-          <p className=" text-center">No coins available.</p>
+          <p className="text-center">No coins available.</p>
         )}
       </div>
     </div>
