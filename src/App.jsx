@@ -7,7 +7,7 @@ import MobileNavBar from "./components/MobileNavBar";
 
 function App() {
   return (
-    <div className="font-Agdasima flex bg-primary">
+    <div className="font-Agdasima flex flex-col md:flex-row bg-primary">
       <Router>
         <div className="w-14">
           <Sidebar />
