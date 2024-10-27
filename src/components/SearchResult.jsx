@@ -1,6 +1,5 @@
-import { CiInstagram } from "react-icons/ci";
-import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
-import { FiGithub } from "react-icons/fi";
+import { FaXTwitter } from "react-icons/fa6";
+
 import { PiHardHatThin } from "react-icons/pi";
 import { SiBinance, SiCoinbase, SiKucoin, SiWeb3Dotjs } from "react-icons/si";
 
@@ -54,25 +53,27 @@ const SearchResult = ({ result }) => {
           ))
         ) : (
           <div>
-            <h2 className="text-center text-2xl text-text p-4">Jump In</h2>
-            <div className="flex justify-center lg:justify-around gap-4 lg:gap-8 p-3 flex-wrap">
+            <h2 className="text-center text-xl sm:text-2xl lg:text-3xl text-text p-4">
+              Jump In
+            </h2>
+            <div className="flex justify-center lg:justify-around gap-3 sm:gap-6 lg:gap-10 p-3 flex-wrap">
               <a href="https://web3js.readthedocs.io/en/v1.10.0/">
-                <SiWeb3Dotjs className="h-10 w-10 text-secondary" />
+                <SiWeb3Dotjs className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
               </a>
               <a href="https://www.binance.com/">
-                <SiBinance className="h-10 w-10 text-secondary" />
+                <SiBinance className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
               </a>
               <a href="https://www.kucoin.com/">
-                <SiKucoin className="h-10 w-10 text-secondary" />
+                <SiKucoin className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
               </a>
               <a href="https://www.x.com/">
-                <FaXTwitter className="h-10 w-10 text-secondary" />
+                <FaXTwitter className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
               </a>
               <a href="https://www.coinbase.com/">
-                <SiCoinbase className="h-10 w-10 text-secondary" />
+                <SiCoinbase className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
               </a>
               <a href="https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-web3">
-                <PiHardHatThin className="h-10 w-10 text-secondary" />
+                <PiHardHatThin className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
               </a>
             </div>
           </div>
