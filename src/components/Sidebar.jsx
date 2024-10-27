@@ -11,7 +11,7 @@ const Sidebar = () => {
   const menuItems = [
     { icon: CiGlobe, name: "CiGlobe", to: "/" },
     { icon: IoTrendingUp, name: "IoTrendingUp", to: "/price" },
-    { icon: BsStars, name: "BsStars", to: "/ai" },
+    // { icon: BsStars, name: "BsStars", to: "/ai" },
   ];
 
   const bottomItems = [
