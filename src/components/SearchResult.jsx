@@ -59,21 +59,28 @@ const SearchResult = ({ result }) => {
             <div className="flex justify-center lg:justify-around gap-3 sm:gap-6 lg:gap-10 p-3 flex-wrap">
               <a href="https://web3js.readthedocs.io/en/v1.10.0/">
                 <SiWeb3Dotjs className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
+                <span className="text-secondary text-center">Web3.js</span>
               </a>
               <a href="https://www.binance.com/">
                 <SiBinance className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
+                <span className="text-secondary text-center">Binance</span>
               </a>
               <a href="https://www.kucoin.com/">
                 <SiKucoin className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
+                <span className="text-secondary">Kucoin</span>
               </a>
               <a href="https://www.x.com/">
                 <FaXTwitter className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
+                <span className="text-secondary text-center">X</span>
               </a>
               <a href="https://www.coinbase.com/">
                 <SiCoinbase className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
+                <span className="text-secondary text-center">Coinbase</span>
               </a>
               <a href="https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-web3">
                 <PiHardHatThin className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-secondary transition-transform transform hover:scale-110" />
+
+                <span className="text-secondary text-center">HardHat</span>
               </a>
             </div>
           </div>

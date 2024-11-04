@@ -45,7 +45,11 @@ const CryptoPrices = () => {
   };
 
   if (loading) {
-    return <div className="p-4">Loading...</div>;
+    return (
+      <div className=" h-screen items-center justify-center flex">
+        <div className="w-10 h-10 border-4 border-gray-200 border-t-primaryHover rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   if (error) {
